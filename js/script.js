@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.style.right = '20px';
         button.style.display = 'none';
         button.style.padding = '10px 15px';
-        button.style.backgroundColor = '#e75a7c';
+        button.style.backgroundColor = '#ff8c38';
         button.style.color = 'white';
         button.style.border = 'none';
         button.style.borderRadius = '50%';
