@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Créations - Les Délices de Marie</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Police Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques à la galerie */
+        .gallery-container {
+            padding: 5rem 5%;
+        }
+        
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .gallery-header h2 {
+            color: #e75a7c;
+            font-size: 2.5rem;
+        }
+        
+        .gallery-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: 2px solid #e75a7c;
+            color: #e75a7c;
+            padding: 0.5rem 1.5rem;
+            margin: 0.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #e75a7c;
+            color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item .placeholder-image {
+            height: 250px;
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-item-title {
+            font-family: 'Playfair Display', serif;
+            color: #e75a7c;
+            margin-bottom: 0.3rem;
+        }
+        
+        .gallery-item-category {
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Les Délices de Marie</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="galerie.html" class="active">Nos Créations</a></li>
+                <li><a href="a-propos.html">À Propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="gallery-container">
+        <div class="gallery-header">
+            <h2>Nos Créations</h2>
+            <p>Découvrez notre sélection de gâteaux personnalisés pour toutes les occasions. Chaque création est unique et réalisée avec passion.</p>
+        </div>
+        
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="anniversaire">Anniversaires</button>
+            <button class="filter-btn" data-filter="mariage">Mariages</button>
+            <button class="filter-btn" data-filter="personnalise">Personnalisés</button>
+            <button class="filter-btn" data-filter="patisserie">Pâtisseries</button>
+        </div>
+        
+        <div class="gallery-grid">
+            <!-- Gâteau 1 -->
+            <div class="gallery-item" data-category="anniversaire">
+                <div class="placeholder-image">Gâteau Anniversaire 1</div>
+                <div class="gallery-item-overlay">
+                    <h3 class="gallery-item-title">Gâteau Chocolat & Fraises</h3>
+                    <p class="gallery-item-category">Anniversaire</p>
+                </div>
+            </div>
+            
+            <!-- Gâteau 2 -->
+            <div class="gallery-item" data-category="mariage">
+                <div class="placeholder-image">Gâteau Mariage</div>
+                <div class="gallery-item-overlay">
+                    <h3 class="gallery-item-title">Wedding Cake Élégance</h3>
+                    <p class="gallery-item-category">Mariage</p>
+                </div>
+            </div>
+            
+            <!-- Gâteau 3 -->
+            <div class="gallery-item" data-category="personnalise">
+                <div class="placeholder-image">Gâteau Thème</div>
+                <div class="gallery-item-overlay">
+                    <h3 class="gallery-item-title">Gâteau Thème Super-héros</h3>
+                    <p class="gallery-item-category">Personnalisé</p>
+                </div>
+            </div>
+            
+            <!-- Gâteau 4 -->
+            <div class="gallery-item" data-category="patisserie">
+                <div class="placeholder-image">Pâtisserie</div>
+                <div class="gallery-item-overlay">
+                    <h3 class="gallery-item-title">Tarte aux Fruits Rouges</h3>
+                    <p class="gallery-item-category">Pâtisserie</p>
+                </div>
+            </div>
+            
+            <!-- Gâteau 5 -->
+            <div class="gallery-item" data-category="anniversaire">
+                <div class="placeholder-image">Gâteau Anniversaire 2</div>
+                <div class="gallery-item-overlay">
+                    <h3 class="gallery-item-title">Layer Cake Vanille</h3>
+                    <p class="gallery-item-category">Anniversaire</p>
+                </div>
+            </div>
+            
+            <!-- Gâteau 6 -->
+            <div class="gallery-item" data-category="personnalise">
+                <div class="placeholder-image">Gâteau Enfant</div>
+                <div class="gallery-item-overlay">
+                    <h3 class="gallery-item-title">Gâteau Licorne</h3>
+                    <p class="gallery-item-category">Personnalisé</p>
+                </div>
+            </div>
+            
+            <!-- Gâteau 7 -->
+            <div class="gallery-item" data-category="patisserie">
+                <div class="placeholder-image">Cupcakes</div>
+                <div class="gallery-item-overlay">
+                    <h3 class="gallery-item-title">Assortiment de Cupcakes</h3>
+                    <p class="gallery-item-category">Pâtisserie</p>
+                </div>
+            </div>
+            
+            <!-- Gâteau 8 -->
+            <div class="gallery-item" data-category="mariage">
+                <div class="placeholder-image">Wedding Cupcakes</div>
+                <div class="gallery-item-overlay">
+                    <h3 class="gallery-item-title">Cupcakes Mariage</h3>
+                    <p class="gallery-item-category">Mariage</p>
+                </div>
+            </div>
+            
+            <!-- Gâteau 9 -->
+            <div class="gallery-item" data-category="anniversaire">
+                <div class="placeholder-image">Gâteau Numéro</div>
+                <div class="gallery-item-overlay">
+                    <h3 class="gallery-item-title">Number Cake</h3>
+                    <p class="gallery-item-category">Anniversaire</p>
+                </div>
+            </div>

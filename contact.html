@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Commande - Les Délices de Marie</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Police Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques à la page contact */
+        .contact-container {
+            padding: 5rem 5%;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-header h2 {
+            color: #e75a7c;
+            font-size: 2.5rem;
+        }
+        
+        .contact-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form-container {
+            flex: 2;
+        }
+        
+        .info-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-card h3 {
+            color: #e75a7c;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .info-icon {
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            color: #e75a7c;
+        }
+        
+        .order-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #e75a7c;
+            outline: none;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input {
+            margin-right: 0.5rem;
+        }
+        
+        .submit-btn {
+            background-color: #e75a7c;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #d14e6e;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .faq-section {
+            padding: 4rem 5%;
+            background-color: #f9f9f9;
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .faq-header h3 {
+            color: #e75a7c;
+            font-size: 2rem;
+        }
+        
+        .faq-items {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #e75a7c;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 200px;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Les Délices de Marie</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="galerie.html">Nos Créations</a></li>
+                <li><a href="a-propos.html">À Propos</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-container">
+        <div class="contact-header">
+            <h2>Contactez-nous</h2>
+            <p>Vous souhaitez commander un gâteau personnalisé ou simplement obtenir plus d'informations ? N'hésitez pas à nous contacter, nous vous répondrons dans les plus brefs délais.</p>
+        </div>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>Informations de Contact</h3>
+                    <div class="info-item">
+                        <div class="info-icon">📱</div>
+                        <div>06 XX XX XX XX</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Les Délices de Marie</h3>
+                <p>Gâteaux personnalisés pour toutes occasions</p>
+                <p>📍 Votre ville, France</p>
+                <p>📱 06 XX XX XX XX</p>
+            </div>
+            <div class="footer-nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="galerie.html">Nos Créations</a></li>
+                    <li><a href="a-propos.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">IG</a>
+                    <a href="#" class="social-icon">PIN</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Les Délices de Marie. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Script pour les FAQ
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // Fermer tous les autres items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle l'état actif de l'item cliqué
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Validation du formulaire
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validation simple avec le script existant dans script.js
+                    
+                    // Vous pourriez ajouter ici un code pour envoyer les données par email
+                    // ou les stocker dans une base de données, mais cela nécessiterait 
+                    // un traitement côté serveur (PHP, Node.js, etc.)
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+    
+    <section class="faq-section">
+        <div class="faq-header">
+            <h3>Questions Fréquentes</h3>
+        </div>
+        
+        <div class="faq-items">
+            <div class="faq-item">
+                <div class="faq-question">Quel est le délai pour commander un gâteau ?</div>
+                <div class="faq-answer">
+                    <p>Pour les gâteaux d'anniversaire et autres occasions, nous recommandons de commander au moins 7 jours à l'avance. Pour les gâteaux de mariage, un délai de 4 à 6 semaines est préférable. En cas d'urgence, n'hésitez pas à nous contacter directement pour vérifier nos disponibilités.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Est-ce que vous livrez les gâteaux ?</div>
+                <div class="faq-answer">
+                    <p>Oui, nous proposons un service de livraison dans un rayon de 30 km autour de notre atelier. Des frais de livraison s'appliquent en fonction de la distance. Vous pouvez également venir retirer votre commande directement à notre atelier.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Comment s'effectue le paiement ?</div>
+                <div class="faq-answer">
+                    <p>Nous demandons un acompte de 30% à la confirmation de la commande. Le solde est à régler au plus tard lors de la livraison ou du retrait. Nous acceptons les paiements par virement bancaire, espèces ou carte bancaire.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Pouvez-vous réaliser des gâteaux pour des personnes allergiques ?</div>
+                <div class="faq-answer">
+                    <p>Bien sûr ! Nous pouvons adapter nos recettes pour les personnes souffrant d'allergies ou d'intolérances alimentaires (sans gluten, sans lactose, etc.). N'hésitez pas à nous préciser vos besoins spécifiques lors de votre commande.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Quel est le prix d'un gâteau personnalisé ?</div>
+                <div class="faq-answer">
+                    <p>Le prix dépend de plusieurs facteurs : le nombre de personnes, la complexité du design, les parfums choisis, etc. Nous établissons un devis personnalisé pour chaque commande. N'hésitez pas à nous contacter pour obtenir un devis gratuit et sans engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div>contact@lesdelicesdemarie.fr</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>Votre ville, France</div>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Horaires</h3>
+                    <div class="info-item">
+                        <div class="info-icon">🕒</div>
+                        <div>Lundi - Vendredi: 9h - 18h</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🕒</div>
+                        <div>Samedi: 9h - 13h</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🕒</div>
+                        <div>Dimanche: Fermé</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <form id="contact-form" class="order-form">
+                    <h3 style="color: #e75a7c; margin-bottom: 1.5rem;">Formulaire de Commande</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom Complet*</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Téléphone*</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-date">Date de l'Événement*</label>
+                            <input type="date" id="event-date" name="event-date" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Type de Gâteau*</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="birthday" name="cake-type" value="birthday" checked>
+                                <label for="birthday">Anniversaire</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="wedding" name="cake-type" value="wedding">
+                                <label for="wedding">Mariage</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="custom" name="cake-type" value="custom">
+                                <label for="custom">Personnalisé</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="pastry" name="cake-type" value="pastry">
+                                <label for="pastry">Pâtisserie</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests">Nombre de Personnes*</label>
+                        <input type="number" id="guests" name="guests" class="form-control" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="flavors">Parfum(s) Souhaité(s)*</label>
+                        <select id="flavors" name="flavors" class="form-control" required>
+                            <option value="">Sélectionnez un parfum</option>
+                            <option value="chocolate">Chocolat</option>
+                            <option value="vanilla">Vanille</option>
+                            <option value="fruitsrouges">Fruits Rouges</option>
+                            <option value="caramel">Caramel Beurre Salé</option>
+                            <option value="citron">Citron</option>
+                            <option value="other">Autre (précisez dans le message)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Détails de votre Commande*</label>
+                        <textarea id="message" name="message" class="form-control" placeholder="Décrivez le type de gâteau que vous souhaitez, thème, couleurs, allergies éventuelles, etc." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Envoyer ma Demande</button>
+                    </div>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - Les Délices de Marie</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Police Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques à la page À propos */
+        .about-container {
+            padding: 5rem 5%;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .about-header h2 {
+            color: #e75a7c;
+            font-size: 2.5rem;
+        }
+        
+        .about-section {
+            display: flex;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-content h3 {
+            color: #e75a7c;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .process-section {
+            background-color: #f9f9f9;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        
+        .process-section h3 {
+            color: #e75a7c;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .process-step {
+            flex: 1;
+            padding: 2rem;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        
+        .step-number {
+            background-color: #e75a7c;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .testimonials {
+            padding: 5rem 5%;
+            text-align: center;
+        }
+        
+        .testimonials h3 {
+            color: #e75a7c;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial {
+            display: none;
+        }
+        
+        .testimonial.active {
+            display: block;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .testimonial-content::before,
+        .testimonial-content::after {
+            content: '"';
+            font-size: 2rem;
+            color: #e75a7c;
+        }
+        
+        .testimonial-author {
+            font-weight: 500;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .testimonial-dot.active {
+            background-color: #e75a7c;
+        }
+        
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .process-step {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Les Délices de Marie</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="galerie.html">Nos Créations</a></li>
+                <li><a href="a-propos.html" class="active">À Propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-container">
+        <div class="about-header">
+            <h2>À Propos de Marie</h2>
+        </div>
+        
+        <div class="about-section">
+            <div class="about-image">
+                <div class="placeholder-image">Photo de Marie</div>
+            </div>
+            <div class="about-content">
+                <h3>Notre Histoire</h3>
+                <p>Bienvenue chez Les Délices de Marie ! Je suis Marie, passionnée de pâtisserie depuis mon plus jeune âge. J'ai toujours aimé créer des desserts pour ma famille et mes amis, en expérimentant des saveurs et des designs uniques.</p>
+                <p>Après avoir suivi une formation professionnelle en pâtisserie et travaillé pendant plusieurs années dans des établissements renommés, j'ai décidé de me lancer dans l'aventure entrepreneuriale pour partager ma passion avec le plus grand nombre.</p>
+                <p>Aujourd'hui, je crée des gâteaux personnalisés pour tous vos événements spéciaux : anniversaires, mariages, baptêmes, et toutes autres occasions qui méritent un dessert exceptionnel.</p>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <div class="about-content">
+                <h3>Notre Philosophie</h3>
+                <p>Chez Les Délices de Marie, chaque création est unique et réalisée avec passion. Je m'engage à utiliser des ingrédients de qualité, locaux et de saison autant que possible, pour vous offrir des desserts savoureux et authentiques.</p>
+                <p>La personnalisation est au cœur de mon travail : chaque gâteau raconte une histoire, votre histoire. Je prends le temps d'échanger avec vous pour comprendre vos envies et créer le dessert qui correspondra parfaitement à votre événement.</p>
+                <p>La satisfaction client est ma priorité absolue. Je m'efforce de dépasser vos attentes et de rendre chaque moment encore plus spécial grâce à mes créations.</p>
+            </div>
+            <div class="about-image">
+                <div class="placeholder-image">Photo d'un gâteau</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="process-section">
+        <h3>Notre Processus de Création</h3>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Consultation</h4>
+                <p>Nous discutons de vos besoins, goûts et de l'événement pour lequel vous souhaitez commander un gâteau.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>Design</h4>
+                <p>Je crée un design personnalisé qui correspond à vos attentes et vous soumets une proposition.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Création</h4>
+                <p>Je prépare votre gâteau avec des ingrédients frais et une attention particulière aux détails.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>Livraison</h4>
+                <p>Votre gâteau est soigneusement livré à l'adresse et à la date convenues, prêt à être dégusté !</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <h3>Ce Que Disent Nos Clients</h3>
+        <div class="testimonial-slider">
+            <div class="testimonial active">
+                <div class="testimonial-content">
+                    Le gâteau d'anniversaire que Marie a créé pour ma fille était absolument magnifique et délicieux ! Tout le monde a été impressionné par le design et les saveurs. Je recommande vivement Les Délices de Marie !
+                </div>
+                <div class="testimonial-author">Sophie M.</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    Pour notre mariage, nous voulions un wedding cake original qui nous ressemble. Marie a parfaitement compris nos attentes et a créé une pièce montée qui a émerveillé tous nos invités. Un grand merci !
+                </div>
+                <div class="testimonial-author">Thomas et Julie B.</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    J'ai commandé un number cake pour l'anniversaire de ma mère et le résultat était au-delà de mes espérances. Non seulement il était magnifique mais aussi incroyablement bon. Un vrai régal !
+                </div>
+                <div class="testimonial-author">Lucie D.</div>
+            </div>
+            <div class="testimonial-nav">
+                <div class="testimonial-dot active" data-index="0"></div>
+                <div class="testimonial-dot" data-index="1"></div>
+                <div class="testimonial-dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Les Délices de Marie</h3>
+                <p>Gâteaux personnalisés pour toutes occasions</p>
+                <p>📍 Votre ville, France</p>
+                <p>📱 06 XX XX XX XX</p>
+            </div>
+            <div class="footer-nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="galerie.html">Nos Créations</a></li>
+                    <li><a href="a-propos.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">IG</a>
+                    <a href="#" class="social-icon">PIN</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Les Délices de Marie. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Script pour le slider de témoignages
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonials = document.querySelectorAll('.testimonial');
+            const dots = document.querySelectorAll('.testimonial-dot');
+            
+            // Fonction pour afficher un témoignage spécifique
+            function showTestimonial(index) {
+                testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                testimonials[index].classList.add('active');
+                dots[index].classList.add('active');
+            }
+            
+            // Ajouter des événements click aux points de navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = this.getAttribute('data-index');
+                    showTestimonial(index);
+                });
+            });
+            
+            // Rotation automatique des témoignages
+            let currentIndex = 0;
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                showTestimonial(currentIndex);
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
