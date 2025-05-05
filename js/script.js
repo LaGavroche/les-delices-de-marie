@@ -155,4 +155,52 @@ document.addEventListener('DOMContentLoaded', function() {
     if ('IntersectionObserver' in window) {
         animateOnScroll();
     }
+    function setupLightbox() {
+        // Créer les éléments de la lightbox
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.style.display = 'none';
+        
+        const lightboxImg = document.createElement('img');
+        lightboxImg.className = 'lightbox-img';
+        
+        const closeBtn = document.createElement('span');
+        closeBtn.innerHTML = '&times;';
+        closeBtn.className = 'lightbox-close';
+        
+        // Ajouter les éléments à la lightbox
+        lightbox.appendChild(lightboxImg);
+        lightbox.appendChild(closeBtn);
+        document.body.appendChild(lightbox);
+        
+        // Configurer les gestionnaires d'événements
+        closeBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Rétablir le défilement
+        });
+        
+        lightbox.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Rétablir le défilement
+        });
+        
+        lightboxImg.addEventListener('click', function(e) {
+            e.stopPropagation(); // Empêcher la fermeture lors du clic sur l'image
+        });
+        
+        // Ajouter des événements de clic à toutes les images de la galerie
+        const galleryImages = document.querySelectorAll('.gallery-item img, .gallery-preview img, .about-image img');
+        
+        galleryImages.forEach(img => {
+            img.addEventListener('click', function() {
+                lightboxImg.src = this.src;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Empêcher le défilement du fond
+            });
+        });
+    }
+    
+    // Exécuter la configuration de la lightbox
+    setupLightbox();
 });
